@@ -34,12 +34,12 @@ export default class LetterMap {
 
   drawLetter() {
     this.ctx = this.canvas.getContext('2d');
-    this.ctx.font = '70vw Suez One';
+    this.ctx.font = '60vw Suez One';
 
     this.ctx.save();
     this.ctx.fillStyle = 'black';
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.translate(0.5 * this.canvas.width, 0.5 * this.canvas.height);
+    this.ctx.translate(0.5 * this.canvas.width, 0.6 * this.canvas.height);
     this.ctx.textBaseline = 'middle';
     this.ctx.textAlign = 'center';
     this.ctx.fillStyle = 'white';

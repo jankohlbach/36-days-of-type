@@ -92,6 +92,13 @@ class Day1 {
       const width = 3;
       const height = 3;
       const aspectRatioRange = 0.4;
+      const colors = [
+        '#ffff82',
+        '#f5f7dc',
+        '#b5d99c',
+        '#0f0326',
+        '#e65f5c',
+      ];
 
       let rectangle;
       let overlaps;
@@ -108,7 +115,7 @@ class Day1 {
           aspectRatio,
           freeze: false,
           index: i,
-          color: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
+          color: colors[Math.floor(Math.random() * colors.length)],
         };
         inLetter = this.checkIfInLetter(rectangle.x, rectangle.y);
         overlaps = this.checkOverlap(rectangle);
