@@ -90,10 +90,10 @@ class Day1 {
 
     this.rectangles.forEach((rectangle) => {
       if (!rectangle.freeze) {
-        rectangle.x -= 0.05;
-        rectangle.y -= 0.05;
-        rectangle.width += 0.1;
-        rectangle.height += 0.1 * rectangle.aspectRatio;
+        rectangle.x -= 0.06;
+        rectangle.y -= 0.06;
+        rectangle.width += 0.12;
+        rectangle.height += 0.12 * rectangle.aspectRatio;
       }
 
       if (checkRectOverlap(rectangle, this.rectangles, this.spacing)) {
