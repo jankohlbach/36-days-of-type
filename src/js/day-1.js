@@ -131,6 +131,9 @@ class Day1 {
   render() {
     this.myCanvas.ctx.clearRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
 
+    this.myCanvas.ctx.fillStyle = 'white';
+    this.myCanvas.ctx.fillRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
+
     this.rectangles.forEach((rectangle) => {
       if (!rectangle.freeze) {
         rectangle.x -= 0.05;
