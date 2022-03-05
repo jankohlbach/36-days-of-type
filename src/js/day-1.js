@@ -1,5 +1,6 @@
 import LetterMap from './create-letter-map';
 import Canvas from './create-canvas';
+import Recorder from './create-recorder';
 
 const randomInRange = (min, max) => min + Math.random() * (max - min);
 
@@ -8,7 +9,7 @@ const CANVAS_HEIGHT = 1024;
 
 class Day1 {
   async init() {
-    ['checkIfInLetter', 'checkOverlap', 'checkOutOfBounce', 'createRectangles', 'render'].forEach((fn) => { this[fn] = this[fn].bind(this); });
+    ['checkIfInLetter', 'checkOverlap', 'checkOutOfBounce', 'startRecording', 'createRectangles', 'render'].forEach((fn) => { this[fn] = this[fn].bind(this); });
 
     this.letterMap = new LetterMap({
       letter: 'A',
@@ -28,6 +29,8 @@ class Day1 {
     this.rectangles = [];
 
     this.spacing = 2;
+
+    this.startRecording();
 
     this.createRectangles();
 
@@ -87,6 +90,12 @@ class Day1 {
     return false;
   }
 
+  startRecording() {
+    this.stream = this.myCanvas.canvas.captureStream(25);
+    this.recorder = new Recorder({ stream: this.stream, fileName: 'day-1' });
+    this.recorder.start();
+  }
+
   createRectangles() {
     for (let i = 0; i < 2000; i += 1) {
       const width = 3;
@@ -134,6 +143,8 @@ class Day1 {
     this.myCanvas.ctx.fillStyle = 'white';
     this.myCanvas.ctx.fillRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
 
+    let frozenRectangles = 0;
+
     this.rectangles.forEach((rectangle) => {
       if (!rectangle.freeze) {
         rectangle.x -= 0.05;
@@ -144,10 +155,15 @@ class Day1 {
 
       if (this.checkOverlap(rectangle) || this.checkOutOfBounce(rectangle)) {
         rectangle.freeze = true;
+        frozenRectangles += 1;
       }
 
       this.myCanvas.ctx.fillStyle = rectangle.color;
       this.myCanvas.ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+
+      if (frozenRectangles === this.rectangles.length) {
+        this.recorder.stop();
+      }
     });
 
     window.requestAnimationFrame(this.render);
