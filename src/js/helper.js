@@ -1,5 +1,7 @@
 export const randomInRange = (min, max) => min + Math.random() * (max - min);
 
+export const lerp = (a, b, n) => (1 - n) * a + n * b;
+
 export const checkIfInLetter = (letterMapData, x, y) => {
   const pos = (Math.round(y) * letterMapData.width + Math.round(x)) * 4;
   const v = letterMapData.data[pos];
