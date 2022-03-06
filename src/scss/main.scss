@@ -14,3 +14,25 @@ body {
   width: 100%;
   height: 100%;
 }
+
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(6 * 100vh / 6);
+  margin: 0 auto;
+}
+
+.tile {
+  height: calc(100vh / 6);
+  aspect-ratio: 1;
+}
