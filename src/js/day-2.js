@@ -3,8 +3,8 @@ import Canvas from './create-canvas';
 import Recorder from './create-recorder';
 import { randomInRange, checkIfInLetter, checkCircleOverlap } from './helper';
 
-const CANVAS_WIDTH = 1024;
-const CANVAS_HEIGHT = 1024;
+const CANVAS_WIDTH = 1080;
+const CANVAS_HEIGHT = 1080;
 
 class Day2 {
   async init() {

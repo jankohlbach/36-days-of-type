@@ -2,8 +2,8 @@ import LetterMap from './create-letter-map';
 import Canvas from './create-canvas';
 import Recorder from './create-recorder';
 
-const CANVAS_WIDTH = 1024;
-const CANVAS_HEIGHT = 1024;
+const CANVAS_WIDTH = 1080;
+const CANVAS_HEIGHT = 1080;
 
 class Day$ {
   async init() {
