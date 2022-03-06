@@ -33,6 +33,11 @@ img {
 }
 
 .tile {
+  display: none;
   height: calc(100vh / 6);
   aspect-ratio: 1;
+
+  &.active {
+    display: block;
+  }
 }
