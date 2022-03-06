@@ -96,9 +96,6 @@ class Day4 {
   render() {
     this.myCanvas.ctx.clearRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
 
-    this.myCanvas.ctx.fillStyle = 'white';
-    this.myCanvas.ctx.fillRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
-
     this.myCanvas.ctx.globalCompositeOperation = 'source-over';
 
     this.drawLetter();
@@ -142,6 +139,11 @@ class Day4 {
         this.recorder.stop();
       }
     });
+
+    this.myCanvas.ctx.globalCompositeOperation = 'destination-over';
+
+    this.myCanvas.ctx.fillStyle = 'white';
+    this.myCanvas.ctx.fillRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
 
     window.requestAnimationFrame(this.render);
   }
