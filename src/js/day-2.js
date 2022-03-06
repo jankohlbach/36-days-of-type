@@ -35,7 +35,7 @@ class Day2 {
 
   createDots() {
     for (let i = 0; i < 2000; i += 1) {
-      const radius = 2;
+      const radius = 1.8;
       const colors = [
         '#e53d00',
         '#ffe900',
@@ -87,7 +87,7 @@ class Day2 {
 
     this.dots.forEach((dot) => {
       if (!dot.freeze) {
-        dot.radius += 0.1;
+        dot.radius += 0.08;
       }
 
       if (checkCircleOverlap(dot, this.dots, this.spacing)) {
