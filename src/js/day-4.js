@@ -36,7 +36,7 @@ class Day4 {
   }
 
   drawLetter() {
-    this.myCanvas.ctx.font = '1024px Suez One';
+    this.myCanvas.ctx.font = `${1024 * devicePixelRatio}px Suez One`;
     this.myCanvas.ctx.translate(
       0.5 * this.myCanvas.canvas.width,
       0.6 * this.myCanvas.canvas.height,

@@ -34,7 +34,7 @@ export default class LetterMap {
 
   drawLetter() {
     this.ctx = this.canvas.getContext('2d');
-    this.ctx.font = '1024px Suez One';
+    this.ctx.font = `${1024 * devicePixelRatio}px Suez One`;
 
     this.ctx.save();
     this.ctx.fillStyle = 'black';
