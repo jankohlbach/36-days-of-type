@@ -15,9 +15,15 @@ body {
   height: 100%;
 }
 
+body.center {
+  display: grid;
+  place-content: center;
+}
+
 canvas {
   display: block;
   margin: 0 auto;
+  max-width: 100%;
 }
 
 img {

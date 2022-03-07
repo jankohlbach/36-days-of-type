@@ -28,13 +28,13 @@ export default class LetterMap {
     this.canvas.width = this.canvasWidth * devicePixelRatio;
     this.canvas.height = this.canvasHeight * devicePixelRatio;
 
-    this.canvas.style.width = `${this.canvasWidth}px`;
-    this.canvas.style.height = `${this.canvasHeight}px`;
+    this.canvas.style.width = window.innerWidth >= this.canvasWidth ? `${this.canvasWidth}px` : `${window.innerWidth}px`;
+    this.canvas.style.height = window.innerWidth >= this.canvasWidth ? `${this.canvasHeight}px` : `${window.innerWidth}px`;
   }
 
   drawLetter() {
     this.ctx = this.canvas.getContext('2d');
-    this.ctx.font = '60vw Suez One';
+    this.ctx.font = '1024px Suez One';
 
     this.ctx.save();
     this.ctx.fillStyle = 'black';
