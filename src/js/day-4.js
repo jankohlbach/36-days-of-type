@@ -72,7 +72,7 @@ class Day4 {
           y: this.myCanvas.canvas.height + sum,
           startY: this.myCanvas.canvas.height + sum,
           width: this.myCanvas.canvas.width,
-          height: randomInRange(30, 80),
+          height: randomInRange(30, 60),
           rotation: this.rotation,
           freeze: false,
           index,
@@ -104,12 +104,16 @@ class Day4 {
 
     let frozenStripes = 0;
 
-    this.stripes.forEach((stripe) => {
+    this.stripes.forEach((stripe, i) => {
       if (!stripe.freeze) {
         stripe.y -= stripe.y * 0.015 > 1 ? stripe.y * 0.015 : 0.5;
       }
 
       if (stripe.startY - stripe.y > this.myCanvas.canvas.height) {
+        if (stripe.y > this.stripes[i - 1]?.y + this.stripes[i - 1]?.height) {
+          stripe.y = this.stripes[i - 1]?.y + this.stripes[i - 1]?.height;
+        }
+
         stripe.freeze = true;
         frozenStripes += 1;
       }

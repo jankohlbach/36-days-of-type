@@ -110,7 +110,7 @@ class Day5 {
 
     let frozenRectangles = 0;
 
-    this.boxes.forEach((row) => {
+    this.boxes.forEach((row, i) => {
       row.boxes.forEach((box, j) => {
         if (!box.freeze && j < Math.floor(ts * 6)) {
           const factor = this.myCanvas.canvas.height - box.y;
@@ -118,6 +118,10 @@ class Day5 {
         }
 
         if (box.y + box.heightSum > this.myCanvas.canvas.height) {
+          if (box.y + box.height < this.boxes[i - 1]?.boxes[0].y) {
+            box.y = this.boxes[i - 1]?.boxes[0].y - box.height;
+          }
+
           box.freeze = true;
           frozenRectangles += 1;
         }
