@@ -1,8 +1,14 @@
 export default class LetterMap {
-  constructor({ letter, canvasWidth, canvasHeight }) {
+  constructor({
+    letter,
+    canvasWidth,
+    canvasHeight,
+    isNumber = false,
+  }) {
     this.letter = letter;
     this.canvasWidth = canvasWidth;
     this.canvasHeight = canvasHeight;
+    this.isNumber = isNumber;
   }
 
   async init() {
@@ -39,7 +45,7 @@ export default class LetterMap {
     this.ctx.save();
     this.ctx.fillStyle = 'black';
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.translate(0.5 * this.canvas.width, 0.6 * this.canvas.height);
+    this.ctx.translate(0.5 * this.canvas.width, (this.isNumber ? 0.52 : 0.6) * this.canvas.height);
     this.ctx.textBaseline = 'middle';
     this.ctx.textAlign = 'center';
     this.ctx.fillStyle = 'white';
