@@ -47,7 +47,6 @@ class Day10 {
       '#f4d35e',
       '#ee964b',
       '#f95738',
-
     ];
 
     for (let i = 1; i < this.myCanvas.canvas.height / 15; i += 1) {
