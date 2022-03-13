@@ -102,7 +102,7 @@ class Day2 {
       this.myCanvas.ctx.fill();
 
       if (frozenDots === this.dots.length) {
-        this.recorder.stop();
+        this.recorder?.stop();
       }
     });
 

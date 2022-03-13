@@ -39,7 +39,7 @@ class Day$ {
     this.myCanvas.ctx.fillRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
 
     // if () {
-    //   this.recorder.stop();
+    //   this.recorder?.stop();
     // }
 
     window.requestAnimationFrame(this.render);

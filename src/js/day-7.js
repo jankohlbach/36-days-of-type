@@ -74,7 +74,7 @@ class Day7 {
       }
 
       if (i === this.lines.length - 1 && line.lastX >= (this.myCanvas.canvas.width / 8) * 7) {
-        this.recorder.stop();
+        this.recorder?.stop();
       }
 
       if (

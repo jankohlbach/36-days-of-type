@@ -67,7 +67,7 @@ class Day6 {
   render() {
     if (this.loopCount === 1) {
       setTimeout(() => {
-        this.recorder.stop();
+        this.recorder?.stop();
       }, 2000);
     }
 

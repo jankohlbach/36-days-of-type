@@ -130,7 +130,7 @@ class Day5 {
           frozenRectangles === this.boxes
             .reduce((prevValue, currValue) => prevValue + currValue.boxes.length, 0)
         ) {
-          this.recorder.stop();
+          this.recorder?.stop();
         }
 
         this.myCanvas.ctx.fillStyle = box.color;

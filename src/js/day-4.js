@@ -140,7 +140,7 @@ class Day4 {
       );
 
       if (frozenStripes === this.stripes.length) {
-        this.recorder.stop();
+        this.recorder?.stop();
       }
     });
 

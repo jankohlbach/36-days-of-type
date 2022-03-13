@@ -105,7 +105,7 @@ class Day1 {
       this.myCanvas.ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 
       if (frozenRectangles === this.rectangles.length) {
-        this.recorder.stop();
+        this.recorder?.stop();
       }
     });
 

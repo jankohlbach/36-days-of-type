@@ -162,7 +162,7 @@ class Day3 {
       this.myCanvas.ctx.stroke();
 
       if (frozenLines === this.lines.length) {
-        this.recorder.stop();
+        this.recorder?.stop();
       }
     });
 
