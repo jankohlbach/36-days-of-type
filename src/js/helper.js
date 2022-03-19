@@ -60,3 +60,19 @@ export const checkOutOfBounds = (object, canvas, spacing) => {
 
   return false;
 };
+
+export const drawLetter = (myCanvas, letter) => {
+  myCanvas.ctx.font = `${1024 * devicePixelRatio}px Suez One`;
+  myCanvas.ctx.translate(
+    0.5 * myCanvas.canvas.width,
+    0.6 * myCanvas.canvas.height,
+  );
+  myCanvas.ctx.textBaseline = 'middle';
+  myCanvas.ctx.textAlign = 'center';
+  myCanvas.ctx.fillStyle = 'white';
+  myCanvas.ctx.fillText(letter, 0, 0);
+  myCanvas.ctx.translate(
+    -0.5 * myCanvas.canvas.width,
+    -0.6 * myCanvas.canvas.height,
+  );
+};
