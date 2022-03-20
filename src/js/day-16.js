@@ -40,7 +40,6 @@ class Day16 {
           '#f1c40f',
           '#d90368',
           '#00cc66',
-
         ];
 
         const dot = {
