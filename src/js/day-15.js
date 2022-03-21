@@ -30,7 +30,7 @@ class Day15 {
 
     this.createLetters();
 
-    this.startRecording();
+    // this.startRecording();
 
     this.render();
   }
