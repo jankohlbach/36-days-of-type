@@ -32,7 +32,7 @@ class Day19 {
   }
 
   createDots() {
-    for (let i = 0; i < 1000; i += 1) {
+    for (let i = 0; i < 500; i += 1) {
       const colors = [
         '#227c9d',
         '#17c3b2',
@@ -48,7 +48,7 @@ class Day19 {
           x: randomInRange(0, this.myCanvas.canvas.width),
           y: randomInRange(0, this.myCanvas.canvas.height),
           rotation: randomInRange(0, 2),
-          rotationStep: Math.random() < 0.5 ? -0.05 : 0.05,
+          rotationStep: Math.random() < 0.5 ? -0.02 : 0.02,
           color: colors[Math.floor(Math.random() * colors.length)],
         };
       } while (!checkIfInLetter(this.letterMapData, dot.x, dot.y));
@@ -81,7 +81,7 @@ class Day19 {
 
       this.myCanvas.ctx.rotate(dot.rotation * 2 * Math.PI);
 
-      this.myCanvas.ctx.font = `${15 * devicePixelRatio}px Suez One`;
+      this.myCanvas.ctx.font = `${20 * devicePixelRatio}px Suez One`;
       this.myCanvas.ctx.textBaseline = 'middle';
       this.myCanvas.ctx.textAlign = 'center';
       this.myCanvas.ctx.fillStyle = dot.color;
@@ -89,10 +89,10 @@ class Day19 {
 
       this.myCanvas.ctx.restore();
 
-      dot.rotation += dot.rotationStep;
+      dot.rotation += dot.rotationStep / 2;
     });
 
-    if (ts > 6) {
+    if (ts > 5) {
       window.cancelAnimationFrame(this.render);
       this.recorder?.stop();
     } else {
