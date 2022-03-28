@@ -68,9 +68,6 @@ class Day22 {
   render() {
     this.myCanvas.ctx.clearRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
 
-    this.myCanvas.ctx.fillStyle = 'white';
-    this.myCanvas.ctx.fillRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
-
     this.myCanvas.ctx.globalCompositeOperation = 'source-over';
 
     drawLetter(this.myCanvas, 'V');
@@ -110,6 +107,11 @@ class Day22 {
         -0.5 * this.myCanvas.canvas.height,
       );
     });
+
+    this.myCanvas.ctx.globalCompositeOperation = 'destination-over';
+
+    this.myCanvas.ctx.fillStyle = 'white';
+    this.myCanvas.ctx.fillRect(0, 0, this.myCanvas.canvas.width, this.myCanvas.canvas.height);
 
     if (frozenStripes === this.stripes.length) {
       window.cancelAnimationFrame(this.render);
