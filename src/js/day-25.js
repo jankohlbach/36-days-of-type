@@ -23,7 +23,7 @@ class Day25 {
 
     this.loops = 0;
 
-    this.amount = 0.001;
+    this.amount = 0.0007;
 
     this.degrees = 0;
 
@@ -45,12 +45,12 @@ class Day25 {
       '#00f5d4',
     ];
 
-    for (let i = 0; i < 25; i += 1) {
+    for (let i = 0; i < 20; i += 1) {
       let letter;
 
       do {
         letter = {
-          fontSize: (1024 - 25 * 25) + 25 * i,
+          fontSize: (1024 - 20 * 40) + 40 * i,
           startFontSize: 1024,
           color: colors[Math.floor(Math.random() * colors.length)],
         };
@@ -87,9 +87,9 @@ class Day25 {
           this.loops += 1;
         }
 
-        this.amount = 0.001;
+        this.amount = 0.0007;
       } else {
-        this.amount = -0.001;
+        this.amount = -0.0007;
       }
 
       this.degrees += this.amount;
