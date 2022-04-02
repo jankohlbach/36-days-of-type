@@ -35,11 +35,11 @@ class Day30 {
 
   createLines() {
     const colors = [
-      'black',
-      'red',
-      'blue',
-      'gray',
-      'orange',
+      '#ef3e36',
+      '#17bebb',
+      '#f6ae2d',
+      '#2e282a',
+      '#edb88b',
     ];
 
     for (let i = 0; i < this.myCanvas.canvas.width; i += 40) {
