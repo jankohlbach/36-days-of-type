@@ -4,11 +4,13 @@ export default class LetterMap {
     canvasWidth,
     canvasHeight,
     isNumber = false,
+    extra = false,
   }) {
     this.letter = letter;
     this.canvasWidth = canvasWidth;
     this.canvasHeight = canvasHeight;
     this.isNumber = isNumber;
+    this.extra = extra;
   }
 
   async init() {
@@ -45,7 +47,11 @@ export default class LetterMap {
     this.ctx.save();
     this.ctx.fillStyle = 'black';
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.translate(0.5 * this.canvas.width, (this.isNumber ? 0.52 : 0.6) * this.canvas.height);
+    this.ctx.translate(
+      0.5 * this.canvas.width,
+      // eslint-disable-next-line no-nested-ternary
+      (this.extra ? 0.46 : (this.isNumber ? 0.52 : 0.6)) * this.canvas.height,
+    );
     this.ctx.textBaseline = 'middle';
     this.ctx.textAlign = 'center';
     this.ctx.fillStyle = 'white';
